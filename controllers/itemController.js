@@ -6,7 +6,7 @@ const path = require('path');
 class itemController {
     async create(req, res, next) {
         try {
-            const {name, price} = req.body;
+            const {name, price, typeId} = req.body;
             const {img} = req.files;
             let fileName = uuid.v4() + ".jpg";
             img.mv(path.resolve(__dirname, '..', 'static', fileName));
@@ -21,13 +21,15 @@ class itemController {
 
     async getAll(req, res) {
         // const {typeId} = req.query;
-        let items;
+        // let items;
         // if (!typeId) {
-            items = await Item.findAll();
+            // items = await Item.findAll();
         // }
         // if (typeId) {
-        //     items = await Item.findAll({where: {typeId}});
+            // items = await Item.findAll({where: {typeId}});
         // }
+
+        const items = await Item.findAll();
 
         return res.json(items);
     }
