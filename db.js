@@ -3,7 +3,7 @@ const {Sequelize} = require('sequelize');
 module.exports = new Sequelize(
     'ulosya',
     'ulosya',
-    '1234',
+    process.env.DB_PASSWORD,
     {
         dialect: 'postgres',
         host: 'localhost',
