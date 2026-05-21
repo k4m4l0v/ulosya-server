@@ -28,10 +28,21 @@ class itemController {
         // if (typeId) {
         //     items = await Item.findAll({where: {typeId}});
         // }
-
-        const items = await Item.findAll();
-
-        return res.json(items);
+        try {
+            const items = await Item.findAll();
+    
+            return res.json(items);
+        } catch (error) {
+            console.error('ПОЛНАЯ ОШИБКА:', error);
+            console.error('Тип ошибки:', error.name);
+            console.error('Сообщение:', error.message);
+            console.error('Стек:', error.stack);
+            res.status(500).json({
+            error: 'Непредвиденная ошибка',
+            details: error.message,
+            sql: error.sql // если есть
+            });
+        }
     }
 
     async getOne(req, res, next) {
