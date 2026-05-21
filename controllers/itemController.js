@@ -30,6 +30,7 @@ class itemController {
         // }
 
         const items = await Item.findAll();
+        console.log(items);
 
         return res.json(items);
     }
