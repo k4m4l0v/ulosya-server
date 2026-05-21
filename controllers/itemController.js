@@ -23,13 +23,11 @@ class itemController {
         const {typeId} = req.query;
         let items;
         if (!typeId) {
-            items = await Item.findAll({logging: console.log});
+            items = await Item.findAll();
         }
         if (typeId) {
             items = await Item.findAll({where: {typeId}});
         }
-
-        console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!itemController!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1')
 
         return res.json(items);
     }
