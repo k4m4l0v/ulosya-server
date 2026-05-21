@@ -20,17 +20,14 @@ class itemController {
     }
 
     async getAll(req, res) {
-        // const {typeId} = req.query;
-        // let items;
-        // if (!typeId) {
-            // items = await Item.findAll();
-        // }
-        // if (typeId) {
-            // items = await Item.findAll({where: {typeId}});
-        // }
-
-        const items = await Item.findAll();
-        console.log(items);
+        const {typeId} = req.query;
+        let items;
+        if (!typeId) {
+            items = await Item.findAll();
+        }
+        if (typeId) {
+            items = await Item.findAll({where: {typeId}});
+        }
 
         return res.json(items);
     }
