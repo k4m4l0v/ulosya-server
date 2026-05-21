@@ -31,7 +31,7 @@ class itemController {
 
         const items = await Item.findAll();
 
-        return res.json(items);
+        return items;
     }
 
     async getOne(req, res, next) {
