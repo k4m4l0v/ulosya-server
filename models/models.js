@@ -19,7 +19,9 @@ const Item = sequelize.define('item', {
     img: {
         type: DataTypes.STRING,
         allowNull: false
-    },
+    }, 
+}, {
+    timestamps: false
 });
 
 const Type = sequelize.define('type', {
