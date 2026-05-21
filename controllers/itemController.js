@@ -23,7 +23,7 @@ class itemController {
         // const {typeId} = req.query;
         // let items;
         // if (!typeId) {
-            items = await Item.findAll();
+            // items = await Item.findAll();
         // }
         // if (typeId) {
         //     items = await Item.findAll({where: {typeId}});
