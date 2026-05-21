@@ -1,12 +1,12 @@
 const {Sequelize} = require('sequelize');
 
 module.exports = new Sequelize(
-    process.env.DB_NAME,
-    process.env.DB_USER,
-    process.env.DB_PASSWORD,
+    'ulosya',
+    'ulosya',
+    '1234',
     {
         dialect: 'postgres',
-        host: process.env.DB_HOST,
-        port: process.env.DB_PORT,
+        host: '95.163.227.128',
+        port: 5000,
     }
 )
