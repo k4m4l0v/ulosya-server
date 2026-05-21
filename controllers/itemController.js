@@ -21,9 +21,9 @@ class itemController {
 
     async getAll(req, res) {
         // const {typeId} = req.query;
-        // let items;
+        let items;
         // if (!typeId) {
-            // items = await Item.findAll();
+            items = await Item.findAll();
         // }
         // if (typeId) {
         //     items = await Item.findAll({where: {typeId}});
